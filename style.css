@@ -1,19 +1,43 @@
-
 body {
-  font-family: Arial, sans-serif;
-  color: white;
-  width: 100%;
+  background: rgb(0, 7, 43);
+  background: linear-gradient(6deg, rgba(0, 7, 43, 1) 0%, rgba(0, 0, 0, 1) 68%);
+  background-repeat: no-repeat;
+  background-size: 5000px;
+  margin: 0; /* Elimina el margen por defecto */
+  padding: 0; /* Elimina el relleno por defecto */
+  height: 100vh; /* Establece la altura al 100% del viewport */
+  width: 100%; /* Establece el ancho al 100% */
+  overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
+}
+#container {
+  color: aliceblue;
+  padding-top: 10%;
   text-align: center;
-  margin-top: 150px;
-  background: rgb(0,7,43);
-  background: linear-gradient(6deg, rgba(0,7,43,1) 0%, rgba(0,0,0,1) 68%);
+}
+#container > h1 {
+  font-family: "Cutive Mono", monospace;
+  font-family: "Rowdies", sans-serif;
+  animation: bounce 1s infinite;
+}
+#inputGuess {
+  width: 400px; /* Establece el ancho del input a 400px */
+  margin: 0 auto; /* Establece márgenes automáticos para centrarlo horizontalmente */
+  display: block; /* Hace que el input sea un elemento de bloque */
 }
 
-.form-control{
-    width: 600px;
-    text-align: center;
-    margin-left:400px
-}
-.btn-secondary{
-    margin-bottom: 13%;
-}
+@keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  #title {
+    animation: bounce 1s infinite; /* Aplica la animación 'bounce' con duración de 1 segundo y se repite infinitamente */
+  }
+  

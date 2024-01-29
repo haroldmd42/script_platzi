@@ -1,6 +1,5 @@
-
-// Palabra a adivinar
-const wordToGuess = "javascript";
+const wordsToGuess = ["javascript", "programming", "developer", "computer", "algorithm"];
+let currentWordIndex;
 let attemptsLeft = 3;
 
 // Función principal que gestiona el juego
@@ -10,6 +9,24 @@ function playGame() {
   const message = document.getElementById("message");
   const attemptsDisplay = document.getElementById("attempts");
   const resetButton = document.getElementById("resetButton");
+
+  function chooseRandomWord() {
+    currentWordIndex = Math.floor(Math.random() * wordsToGuess.length);
+    return wordsToGuess[currentWordIndex];
+  }
+
+  function initializeGame() {
+    attemptsLeft = 3;
+    attemptsDisplay.textContent = attemptsLeft;
+    guessInput.value = "";
+    message.innerHTML = "";
+    message.classList.remove("text-success", "text-danger");
+    guessInput.disabled = false;
+    guessButton.disabled = false;
+  }
+
+  let wordToGuess = chooseRandomWord();
+  attemptsDisplay.textContent = attemptsLeft;
 
   guessButton.addEventListener("click", function() {
     const guess = guessInput.value.toLowerCase();
@@ -36,13 +53,8 @@ function playGame() {
   });
 
   resetButton.addEventListener("click", function() {
-    attemptsLeft = 3;
-    attemptsDisplay.textContent = attemptsLeft;
-    guessInput.value = "";
-    message.innerHTML = "";
-    message.classList.remove("text-success", "text-danger");
-    guessInput.disabled = false;
-    guessButton.disabled = false;
+    initializeGame();
+    wordToGuess = chooseRandomWord(); // Cambia la palabra a adivinar
   });
 }
 
