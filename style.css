@@ -1,0 +1,19 @@
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
+  background: rgb(0,7,43);
+  background: linear-gradient(6deg, rgba(0,7,43,1) 0%, rgba(0,0,0,1) 68%);
+}
+
+.form-control{
+    width: 600px;
+    text-align: center;
+    margin-left:400px
+}
+.btn-secondary{
+    margin-bottom: 13%;
+}
